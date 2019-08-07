@@ -4,9 +4,9 @@ from django.urls import reverse
 
 # Create your models here.
 class School(models.Model):
-    name = models.CharField(max_length=256)
-    principal = models.CharField(max_length=256)
-    location = models.CharField(max_length=256)
+    name = models.CharField(max_length=256, verbose_name="Nom")
+    principal = models.CharField(max_length=256, verbose_name="Directeur")
+    location = models.CharField(max_length=256, verbose_name="Emplacement")
 
     def __str__(self):
         return self.name
