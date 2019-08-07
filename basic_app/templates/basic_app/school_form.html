@@ -1,0 +1,18 @@
+{% extends "basic_app/basic_app_base.html" %}
+
+{% block body_block %}
+<h1>
+    {% if not form.instance.pk %}
+    Créer une école
+    {% else %}
+    Mise à jour une école
+    {% endif %}
+</h1>
+    <form method="post">
+    <fieldset>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Soumettre</button>
+    </fieldset>
+    </form>
+{% endblock %}
